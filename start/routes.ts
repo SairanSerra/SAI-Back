@@ -23,3 +23,7 @@ import Route from '@ioc:Adonis/Core/Route'
 Route.get('/', async () => {
   return 'Hello world from a ssssssks'
 })
+
+Route.group(() => {
+  Route.post('/create', 'ComponentsController.create')
+}).prefix('components')

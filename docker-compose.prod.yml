@@ -1,0 +1,29 @@
+version: "3.5"
+
+services:
+ sai-back:
+  container_name: sai-back
+  image: sairan/sai-back:latest
+  restart: always
+  ports:
+   - "4002:4002"
+  networks:
+   - mysql-network
+   - proxy-reverse-network
+   - sai-back-network
+  # env_file:
+    # - stack.env
+
+networks:
+  sai-back-network:
+   name: sai-back-network
+   driver: bridge
+  mysql-network:
+   name: mysql-network
+   external: true
+
+  proxy-reverse-network:
+   name: proxy-reverse-network
+   external: true
+
+
