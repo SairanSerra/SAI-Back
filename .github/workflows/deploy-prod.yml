@@ -25,7 +25,7 @@ jobs:
           tags: sairan/sai-back:latest
           no-cache: true
           push: true
-          github-token: ${{ secrets.GITHUB_TOKEN }}
+          github-token: ${{ secrets.ACCOUNT_TOKEN }}
       - name: Update image in stack
         uses: distributhor/workflow-webhook@v2
         env:
