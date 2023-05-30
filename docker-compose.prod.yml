@@ -11,8 +11,8 @@ services:
    - mysql-network
    - proxy-reverse-network
    - sai-back-network
-  # env_file:
-    # - stack.env
+  env_file:
+    - stack.env
 
 networks:
   sai-back-network:
