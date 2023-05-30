@@ -32,8 +32,6 @@ COPY --chown=node:node ./package*.json ./
 RUN npm ci --production
 COPY --chown=node:node --from=build /app/sai-back/build .
 
-COPY --chown=node:node ./run-prod.sh  /tmp
+RUN node ace migration:run --force
 
- RUN chmod +x /tmp/run-prod.sh
-
-ENTRYPOINT ["sh", "/tmp/run-prod.sh"]
+CMD dumb-init node server.js
