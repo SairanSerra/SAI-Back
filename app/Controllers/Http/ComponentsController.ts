@@ -10,7 +10,7 @@ export default class ComponentsController {
     const body = request.all() as ComponentsModel
     const image = request.file('imageDocument')
     const nameImage = `${image!.clientName}${cuid()}.${image?.extname}`
-    const saveImageLocal = image?.move(Application.tmpPath('uploads'), {
+    image?.move(Application.tmpPath('uploads'), {
       name: nameImage,
     })
 
