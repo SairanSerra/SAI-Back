@@ -45,7 +45,7 @@ export default class ComponentsController {
 
   public async getComponents({ request, response }: HttpContextContract) {
     const body = request.all()
-
+    console.log(body)
     const listComponents = await this.getComponentsService.getComponents()
 
     return response.status(200).json(listComponents)
