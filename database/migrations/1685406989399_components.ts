@@ -13,7 +13,7 @@ export default class Components extends BaseSchema {
       table.string('maker')
       table.string('price')
       table.string('size')
-      table.float('typeDraft')
+      table.string('typeDraft')
       table.string('LPP')
       table.string('numberPadronization')
       table.string('imageDocument')

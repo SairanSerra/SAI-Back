@@ -1,43 +1,65 @@
 import { DateTime } from 'luxon'
 import { BaseModel, column } from '@ioc:Adonis/Lucid/Orm'
 
-export default class ComponentsModel extends BaseModel {
+export default class Components extends BaseModel {
   protected tableName = 'components'
 
   @column({ isPrimary: true })
   public id: number
 
-  @column()
+  @column({
+    columnName: 'partNumber',
+  })
   public partNumber: number
 
-  @column()
+  @column({
+    columnName: 'name',
+  })
   public name: string
 
-  @column()
+  @column({
+    columnName: 'description',
+  })
   public description: string
 
-  @column()
+  @column({
+    columnName: 'model',
+  })
   public model: string
 
-  @column()
+  @column({
+    columnName: 'maker',
+  })
   public maker: string
 
-  @column()
+  @column({
+    columnName: 'price',
+  })
   public price: number
 
-  @column()
+  @column({
+    columnName: 'size',
+  })
   public size: number
 
-  @column()
+  @column({
+    columnName: 'typeDraft',
+  })
   public typeDraft: string
 
-  @column()
+  @column({
+    columnName: 'LPP',
+  })
   public LPP: number
 
-  @column()
+  @column({
+    columnName: 'numberPadronization',
+  })
   public numberPadronization: number
 
-  @column()
+  @column({
+    columnName: 'imageDocument',
+  })
   public imageDocument: string
 
   @column.dateTime({

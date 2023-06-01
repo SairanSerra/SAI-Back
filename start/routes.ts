@@ -19,11 +19,17 @@
 */
 
 import Route from '@ioc:Adonis/Core/Route'
+import HealthCheck from '@ioc:Adonis/Core/HealthCheck'
 
-Route.get('/', async () => {
-  return 'Hello world from a ssssssks'
+Route.get('/', async ({ response }) => {
+  const report = await HealthCheck.getReport()
+
+  return report.healthy ? response.ok(report) : response.badRequest(report)
 })
 
 Route.group(() => {
+  Route.get('/get-all', 'ComponentsController.getComponents')
   Route.post('/create', 'ComponentsController.create')
+  Route.delete('/destroy', 'ComponentsController.destroy')
+  Route.get('/get-document', 'ComponentsController.getDocument')
 }).prefix('components')
