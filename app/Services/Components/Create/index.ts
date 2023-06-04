@@ -1,4 +1,3 @@
-import Drive from '@ioc:Adonis/Core/Drive'
 import Components from 'App/Models/Components'
 import { PropsCreateComponents } from './types'
 import Application from '@ioc:Adonis/Core/Application'
@@ -15,7 +14,7 @@ class CreateComponentsService {
     await data.imageDocument?.move(Application.tmpPath('uploads'), {
       name: nameImage,
     })
-    data.imageDocument = await Drive.getUrl(nameImage)
+    data.imageDocument = nameImage
     await this.model.create(data)
 
     return {

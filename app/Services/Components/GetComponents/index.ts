@@ -18,7 +18,6 @@ class GetComponentsService {
 
     const listIsEmpty = (await getListComponents).isEmpty
 
-    console.log(listIsEmpty)
     return {
       statusCode: listIsEmpty ? 404 : 200,
       message: listIsEmpty ? 'Lista de componentes vazia' : 'Lista de Components',
