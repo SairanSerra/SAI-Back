@@ -5,7 +5,7 @@ export interface PropsCreate {
   model: string
   maker: string
   price: number
-  size: number
+  size: string
   typeDraft: string
   LPP: number
   numberPadronization: number
