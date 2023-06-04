@@ -40,7 +40,7 @@ export default class Components extends BaseModel {
   @column({
     columnName: 'size',
   })
-  public size: number
+  public size: string
 
   @column({
     columnName: 'typeDraft',

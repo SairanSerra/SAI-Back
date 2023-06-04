@@ -11,7 +11,7 @@ export const CreateComponents = schema.create({
   model: schema.string(),
   maker: schema.string(),
   price: schema.number(),
-  size: schema.number(),
+  size: schema.string(),
   typeDraft: schema.string(),
   LPP: schema.number(),
   numberPadronization: schema.number(),
