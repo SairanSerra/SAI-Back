@@ -13,7 +13,7 @@ class GetDocumentService {
     return {
       statusCode: documentComponent ? 200 : 404,
       message: documentComponent ? 'Documento encontrado com sucesso' : 'Documento não encontrado',
-      content: documentComponent ? await Drive.get(documentComponent?.imageDocument!) : null,
+      content: documentComponent ? await Drive.getUrl(documentComponent?.imageDocument!) : null,
     }
   }
 }
