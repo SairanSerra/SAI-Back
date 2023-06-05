@@ -32,6 +32,6 @@ export default class ClientsController {
   public async getAll({ response }: HttpContextContract) {
     const listClient = this.getAllClientService.getAll()
 
-    return response.status((await listClient).statusCode).json(listClient)
+    return response.status((await listClient).statusCode).json(await listClient)
   }
 }
