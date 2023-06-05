@@ -7,11 +7,11 @@ class GetAllClientService {
     this.model = Client
   }
   public async getAll() {
-    const getClientSpecific = await this.model.query().paginate(1, 20)
+    const getClientSpecific = await this.model.query()
 
     return {
       statusCode: 200,
-      message: 'Cliente Excluído com sucesso',
+      message: 'Lista de Clientes',
       content: getClientSpecific,
     }
   }
