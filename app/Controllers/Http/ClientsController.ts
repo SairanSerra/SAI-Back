@@ -1,5 +1,6 @@
 import type { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
 import CreateClientService from 'App/Services/Client/Create'
+import { PropsCreateClient } from 'App/Services/Client/Create/types'
 import DestroyClientService from 'App/Services/Client/Destroy'
 import GetAllClientService from 'App/Services/Client/GetClient'
 import { createClient } from 'App/Validator/Client/Create'
@@ -16,8 +17,8 @@ export default class ClientsController {
   }
   public async create({ request, response }: HttpContextContract) {
     await request.validate({ schema: createClient })
-    const body = request.all()
-    const clientCreated = this.createClientService.create(body.id)
+    const body = request.all() as PropsCreateClient
+    const clientCreated = this.createClientService.create(body)
     return response.status((await clientCreated).statusCode).json(clientCreated)
   }
 
