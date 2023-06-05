@@ -33,3 +33,9 @@ Route.group(() => {
   Route.delete('/destroy', 'ComponentsController.destroy')
   Route.get('/get-document', 'ComponentsController.getDocument')
 }).prefix('components')
+
+Route.group(() => {
+  Route.get('/get-all', 'ClientsController.getComponents')
+  Route.post('/create', 'ClientsController.create')
+  Route.delete('/destroy', 'ClientsController.destroy')
+}).prefix('client')
