@@ -7,12 +7,12 @@ class GetAllClientService {
     this.model = Client
   }
   public async getAll() {
-    const getClientSpecific = await this.model.query()
+    const getClientSpecific = await this.model.query().paginate(1, 20)
 
     return {
       statusCode: 200,
       message: 'Lista de Clientes',
-      content: getClientSpecific,
+      content: (await getClientSpecific).all(),
     }
   }
 }
