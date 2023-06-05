@@ -1,11 +1,11 @@
 import { PropsCreateClient } from './types'
-import ClientModel from 'App/Models/ClientModel'
+import Client from 'App/Models/Client'
 
 class CreateClientService {
-  private model: typeof ClientModel
+  private model: typeof Client
 
   constructor() {
-    this.model = ClientModel
+    this.model = Client
   }
   public async create(data: PropsCreateClient) {
     await this.model.create(data)
